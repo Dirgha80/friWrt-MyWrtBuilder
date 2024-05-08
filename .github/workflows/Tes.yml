@@ -10,7 +10,7 @@
 #
 #=====================================================================================
 
-name: Generate friWrt Amlogic Firmware
+name: Tes
 
 on:
   workflow_dispatch:
@@ -40,7 +40,7 @@ on:
       openwrt_kernel:
         description: "Select kernel version"
         required: false
-        default: "5.15.1_6.1.1"
+        default: "5.15.1"
         type: choice
         options:
           - 5.4.1_5.10.1
@@ -254,7 +254,6 @@ jobs:
         run: |
           cd $WORKING_DIR
           bash scripts/builder-patch.sh
-        #  bash scripts/agh-core.sh
           bash scripts/misc.sh
           if [[ "$TUNNEL" == "all" && "$BRANCH" != "21.02.7" ]]; then 
               echo "VPN Client: $TUNNEL"
@@ -374,11 +373,11 @@ jobs:
             ${{ steps.changelog.outputs.CHANGELOG }}
             
             See [here](https://github.com/frizkyiman/friWrt-MyWrtBuilder?tab=readme-ov-file#firmware-details) for more detail feature and other information.
-            - Default IP: 192.168.1.1
+            - Default IP: 192.168.2.1
             - Default username: root
-            - Default password: friwrt
-            - Default WIFI name: friWrt_2g | friWrt_5g (if device supported)
-            - Default WIFI password: friwrt2024 (if device supported)
+            - Default password: sijitekowolu
+            - Default WIFI name: NOKIA-N73 | friWrt_5g (if device supported)
+            - Default WIFI password: sijitekowolu (if device supported)
             
             ### Install to EMMC
             - Login to OpenWrt → System → Amlogic Service → Install OpenWrt
